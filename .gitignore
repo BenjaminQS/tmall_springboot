@@ -2,3 +2,4 @@ target/
 *.class
 .settings
 *.jpg
+src/main/webapp/img/category/*
