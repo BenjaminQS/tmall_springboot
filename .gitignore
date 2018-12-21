@@ -1,5 +1,5 @@
-target/
-*.class
-.settings
+/target/
+/.settings/
 *.jpg
-src/main/webapp/img/category/*
+.classpath
+.project
