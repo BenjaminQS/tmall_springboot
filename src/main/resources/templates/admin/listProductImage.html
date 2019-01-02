@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head th:include="include/admin/adminHeader::html('²úÆ·¹ÜÀí')" ></head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head th:include="include/admin/adminHeader::html('äº§å“ç®¡ç†')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -21,7 +21,7 @@
         var vue = new Vue({
             el: '#workingArea',
             data: data4Vue,
-            mounted:function(){ //mounted¡¡±íÊ¾Õâ¸ö Vue ¶ÔÏó¼ÓÔØ³É¹¦ÁË
+            mounted:function(){ //mountedã€€è¡¨ç¤ºè¿™ä¸ª Vue å¯¹è±¡åŠ è½½æˆåŠŸäº†
                 this.listSingles();
                 this.listDetails();
                 this.getProduct(pid);
@@ -47,7 +47,7 @@
                     });
                 },
                 addSingle: function () {
-                    if(!checkEmpty(this.singleFile, "µ¥¸ö²úÆ·Í¼Æ¬"))
+                    if(!checkEmpty(this.singleFile, "å•ä¸ªäº§å“å›¾ç‰‡"))
                         return;
 
                     var url = this.uri+"?type=single&pid="+pid;
@@ -62,7 +62,7 @@
                     });
                 },
                 addDetail: function () {
-                    if(!checkEmpty(this.detailFile, "ÏêÇé²úÆ·Í¼Æ¬"))
+                    if(!checkEmpty(this.detailFile, "è¯¦æƒ…äº§å“å›¾ç‰‡"))
                         return;
 
                     var url = this.uri+"?type=detail&pid="+pid;
@@ -100,10 +100,10 @@
 
 <div id="workingArea" >
     <ol class="breadcrumb">
-        <li><a href="admin_category_list">ËùÓĞ·ÖÀà</a></li>
+        <li><a href="admin_category_list">æ‰€æœ‰åˆ†ç±»</a></li>
         <li><a :href="'admin_product_list?cid='+category.id">{{category.name}}</a></li>
         <li class="active">{{product.name}}</li>
-        <li class="active">²úÆ·Í¼Æ¬¹ÜÀí</li>
+        <li class="active">äº§å“å›¾ç‰‡ç®¡ç†</li>
     </ol>
 
     <table class="addPictureTable" align="center">
@@ -111,11 +111,11 @@
             <td class="addPictureTableTD">
                 <div>
                     <div class="panel panel-warning addPictureDiv">
-                        <div class="panel-heading">ĞÂÔö²úÆ·<b class="text-primary"> µ¥¸ö </b>Í¼Æ¬</div>
+                        <div class="panel-heading">æ–°å¢äº§å“<b class="text-primary"> å•ä¸ª </b>å›¾ç‰‡</div>
                         <div class="panel-body">
                             <table class="addTable">
                                 <tr>
-                                    <td>ÇëÑ¡Ôñ±¾µØÍ¼Æ¬ ³ß´ç400X400 Îª¼Ñ</td>
+                                    <td>è¯·é€‰æ‹©æœ¬åœ°å›¾ç‰‡ å°ºå¯¸400X400 ä¸ºä½³</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -124,7 +124,7 @@
                                 </tr>
                                 <tr class="submitTR">
                                     <td align="center">
-                                        <button type="submit" @click="addSingle" class="btn btn-success">Ìá ½»</button>
+                                        <button type="submit" @click="addSingle" class="btn btn-success">æ äº¤</button>
                                     </td>
                                 </tr>
                             </table>
@@ -134,15 +134,15 @@
                         <thead>
                         <tr class="success">
                             <th>ID</th>
-                            <th>²úÆ·µ¥¸öÍ¼Æ¬ËõÂÔÍ¼</th>
-                            <th>É¾³ı</th>
+                            <th>äº§å“å•ä¸ªå›¾ç‰‡ç¼©ç•¥å›¾</th>
+                            <th>åˆ é™¤</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr v-for="pi in singleProductImages">
                             <td>{{pi.id}}</td>
                             <td>
-                                <a title="µã»÷²é¿´Ô­Í¼" :href="'img/productSingle/'+pi.id+'.jpg'"><img height="50px" :src="'img/productSingle/'+pi.id+'.jpg'"></a>
+                                <a title="ç‚¹å‡»æŸ¥çœ‹åŸå›¾" :href="'img/productSingle/'+pi.id+'.jpg'"><img height="50px" :src="'img/productSingle/'+pi.id+'.jpg'"></a>
                             </td>
                             <td><a href="#nowhere" @click="deleteBean(pi.id)"><span class="glyphicon glyphicon-trash"></span></a></td>
 
@@ -156,11 +156,11 @@
                 <div>
 
                     <div class="panel panel-warning addPictureDiv">
-                        <div class="panel-heading">ĞÂÔö²úÆ·<b class="text-primary"> ÏêÇé </b>Í¼Æ¬</div>
+                        <div class="panel-heading">æ–°å¢äº§å“<b class="text-primary"> è¯¦æƒ… </b>å›¾ç‰‡</div>
                         <div class="panel-body">
                             <table class="addTable">
                                 <tr>
-                                    <td>ÇëÑ¡Ôñ±¾µØÍ¼Æ¬ ¿í¶È790  Îª¼Ñ</td>
+                                    <td>è¯·é€‰æ‹©æœ¬åœ°å›¾ç‰‡ å®½åº¦790  ä¸ºä½³</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -169,7 +169,7 @@
                                 </tr>
                                 <tr class="submitTR">
                                     <td align="center">
-                                        <button type="submit" @click="addDetail" class="btn btn-success">Ìá ½»</button>
+                                        <button type="submit" @click="addDetail" class="btn btn-success">æ äº¤</button>
                                     </td>
                                 </tr>
                             </table>
@@ -180,15 +180,15 @@
                         <thead>
                         <tr class="success">
                             <th>ID</th>
-                            <th>²úÆ·ÏêÇéÍ¼Æ¬ËõÂÔÍ¼</th>
-                            <th>É¾³ı</th>
+                            <th>äº§å“è¯¦æƒ…å›¾ç‰‡ç¼©ç•¥å›¾</th>
+                            <th>åˆ é™¤</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr v-for="pi in detailProductImages">
                             <td>{{pi.id}}</td>
                             <td>
-                                <a title="µã»÷²é¿´Ô­Í¼" :href="'img/productDetail/'+pi.id+'.jpg'"><img height="50px" :src="'img/productDetail/'+pi.id+'.jpg'"></a>
+                                <a title="ç‚¹å‡»æŸ¥çœ‹åŸå›¾" :href="'img/productDetail/'+pi.id+'.jpg'"><img height="50px" :src="'img/productDetail/'+pi.id+'.jpg'"></a>
                             </td>
                             <td><a href="#nowhere" @click="deleteBean(pi.id)"><span class="glyphicon glyphicon-trash"></span></a></td>
 
