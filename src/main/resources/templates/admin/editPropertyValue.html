@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head th:include="include/admin/adminHeader::html('²úÆ·¹ÜÀí')" ></head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head th:include="include/admin/adminHeader::html('äº§å“ç®¡ç†')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -18,7 +18,7 @@
         var vue = new Vue({
             el: '#workingArea',
             data: data4Vue,
-            mounted:function(){ //mounted¡¡±íÊ¾Õâ¸ö Vue ¶ÔÏó¼ÓÔØ³É¹¦ÁË
+            mounted:function(){ //mountedã€€è¡¨ç¤ºè¿™ä¸ª Vue å¯¹è±¡åŠ è½½æˆåŠŸäº†
                 this.getProduct(pid);
                 this.list();
             },
@@ -56,10 +56,10 @@
 
 <div id="workingArea" >
     <ol class="breadcrumb">
-        <li><a href="admin_category_list">ËùÓĞ·ÖÀà</a></li>
+        <li><a href="admin_category_list">æ‰€æœ‰åˆ†ç±»</a></li>
         <li><a :href="'admin_product_list?cid='+category.id">{{category.name}}</a></li>
         <li class="active">{{product.name}}</li>
-        <li class="active">²úÆ·Í¼Æ¬¹ÜÀí</li>
+        <li class="active">äº§å“å›¾ç‰‡ç®¡ç†</li>
     </ol>
 
     <div class="editPVDiv">
